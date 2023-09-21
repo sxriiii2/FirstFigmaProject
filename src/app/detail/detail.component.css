@@ -1,0 +1,86 @@
+/* CSS to style the user details table */
+.user-details {
+  width: 100%;
+  max-width: 400px; /* Adjust the maximum width as needed */
+  margin: 0 auto;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-header {
+  text-align: center;
+}
+
+.user-label {
+  width: 150px;
+  font-weight: bold;
+}
+
+.user-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+.img{
+  width: 50%;
+  vertical-align: middle;
+}
+
+
+/* Add this CSS to your component's CSS file (e.g., add.component.css) */
+
+/* Style for the image preview */
+.img-preview {
+  max-width: 200px; /* Adjust the maximum width as needed */
+  max-height: 200px; /* Adjust the maximum height as needed */
+  margin: 10px 0;
+}
+
+/* Style for the form fields */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Style for labels */
+label {
+  font-weight: bold;
+}
+
+/* Style for radio buttons and checkboxes */
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Style for the "Select Image" label */
+.custom-file-upload {
+  cursor: pointer;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.custom-file-upload:hover {
+  background-color: #0056b3;
+}
+
+/* Style for buttons */
+.btn {
+  margin-right: 10px;
+}

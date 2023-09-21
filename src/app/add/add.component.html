@@ -1,0 +1,154 @@
+<form *ngIf="userForm" (ngSubmit)="onSubmit()" [formGroup]="userForm">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      class="form-control"
+      formControlName="name"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="address">Address:</label>
+    <input
+      type="text"
+      id="address"
+      name="address"
+      class="form-control"
+      formControlName="address"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <label>Gender:</label>
+    <div>
+      <input
+        type="radio"
+        id="male"
+        name="gender"
+        value="male"
+        formControlName="gender"
+      />
+      Male
+      <input
+        type="radio"
+        id="female"
+        name="gender"
+        value="female"
+        formControlName="gender"
+      />
+      Female
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Educational Qualifications:</label>
+    <div formGroupName="education">
+      <input
+        type="checkbox"
+        id="grade10"
+        name="qualifications"
+        value="Grade 10"
+        formControlName="grade10"
+      />
+      Grade 10
+      <input
+        type="checkbox"
+        id="grade12"
+        name="qualifications"
+        value="Grade 12"
+        formControlName="grade12"
+      />
+      Grade 12
+      <input
+        type="checkbox"
+        id="degree"
+        name="qualifications"
+        value="Degree"
+        formControlName="degree"
+      />
+      Degree
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Phone Number:</label>
+    <input
+      type="tel"
+      id="phone"
+      name="phone"
+      class="form-control"
+      formControlName="phone"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="image">Image:</label>
+    <input
+      type="file"
+      id="image"
+      name="image"
+      (change)="onImageChange($event)"
+    />
+    <img [src]="imagePreview" *ngIf="imagePreview" alt="Selected Image" />
+  </div>
+
+  <div class="form-group">
+    <label for="skill">Skill:</label>
+    <input
+      type="text"
+      id="skill"
+      name="skill"
+      class="form-control"
+      formControlName="skill"
+    />
+    <button
+      type="button"
+      class="btn btn-secondary"
+      (click)="toggleSkillDisplay()"
+    >
+      Add Skill
+    </button>
+  </div>
+
+  <!-- Display added skills -->
+  <div *ngFor="let skill of userForm.get('skills')?.value">
+    <p>{{ skill }}</p>
+  </div>
+  <div>Personalized Skills:</div>
+
+  <div formArrayName="personalizedSkills">
+    <div
+      *ngFor="
+        let skillCtrl of personalizedSkillsFormArray?.controls;
+        let i = index
+      "
+    >
+      <!-- Input field for personalized skill -->
+      <input type="text" class="form-control" formControlName="{{ i }}" />
+      <!-- Buttons for adding and removing personalized skills -->
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="addPersonalizedSkill()"
+      >
+        Add
+      </button>
+      <button
+        type="button"
+        class="btn btn-danger"
+        (click)="removePersonalizedSkill(i)"
+      >
+        Remove
+      </button>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+  <!-- ... Rest of the form ... -->
+</form>

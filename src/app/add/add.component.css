@@ -1,0 +1,26 @@
+.personalized-skill-box {
+  background-color: #f2f2f2;
+  padding: 5px 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.personalized-skill-box:hover {
+  background-color: #ddd;
+}
+/* Add this to your CSS file */
+.custom-file-upload {
+  cursor: pointer;
+  padding: 5px 10px;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+}
+
+.custom-file-upload:hover {
+  background-color: #2980b9;
+}

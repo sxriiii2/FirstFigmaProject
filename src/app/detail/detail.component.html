@@ -1,0 +1,46 @@
+<!-- Convert the user details into a table -->
+<div *ngIf="user" class="user-details">
+  <table>
+    <tr>
+      <td colspan="2" class="user-header">
+        <h2>{{ user.name }}</h2>
+      </td>
+    </tr>
+    <tr>
+      <td class="user-label"><strong>Address:</strong></td>
+      <td>{{ user.address }}</td>
+    </tr>
+    <tr>
+      <td class="user-label"><strong>Gender:</strong></td>
+      <td>{{ user.gender }}</td>
+    </tr>
+    <tr>
+      <td class="user-label"><strong>Phone:</strong></td>
+      <td>{{ user.phone }}</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="img-preview">
+        <img [src]="user.image" alt="User Image" />
+      </td>
+    </tr>
+
+    <tr>
+      <td class="user-label"><strong>Skills:</strong></td>
+      <td>
+        <ul>
+          <li *ngFor="let skill of user.skills">{{ skill }}</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td class="user-label"><strong>Personalized Skills:</strong></td>
+      <td>
+        <ul>
+          <li *ngFor="let skill of user.personalizedSkills; let i = index">
+            Personalized Skill {{ i + 1 }}: {{ skill }}
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</div>
